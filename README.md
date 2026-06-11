@@ -1,10 +1,11 @@
 # kickoff
 
-A minimal opinionated production-ready TS+Express starter template for building backends quickly.
+A minimal opinionated production-ready TS + Express + PostgreSQL + Drizzle starter template for building backends quickly.
 
-<img width="1154" height="516" alt="image" src="https://github.com/user-attachments/assets/d79b420d-5d28-4732-9ad2-caa71f9a8603" />
+<br>
+<img width="1154" height="516" alt="image" src="https://github.com/user-attachments/assets/166e3d55-c3c4-422d-b028-49445e14d310" />
 
-
+<br>
 **Built with:**
 - Express 5
 - Zod
@@ -12,13 +13,13 @@ A minimal opinionated production-ready TS+Express starter template for building 
 - Drizzle ORM
 - TypeScript
 
----
 
 ## Features
 
 **Preconfigured:**
 - `/health` check route
 - Request logger
+- Rate Limiter 
 - TypeScript
 - `dev`, `build`, `start` npm scripts
 - Drizzle client
@@ -34,7 +35,6 @@ A minimal opinionated production-ready TS+Express starter template for building 
 - `post.service.ts`
 - `post.query.ts`
 
----
 
 ## File Organization
 
@@ -49,7 +49,6 @@ src/
   middlewares/   ← all middlewares live here
 ```
 
----
 
 ## Deployment
 
@@ -66,7 +65,6 @@ npm run start  # node --env-file .env dist/index.js
 
 > **NOTE:** Remove `--env-file .env` from the `start` script before deploying. It is only for local development. Railway handles environment variables through its dashboard.
 
----
 
 ## Module Based File Organization
 
@@ -86,7 +84,6 @@ modules/
     links.query.ts       ← raw drizzle queries, repository functions
 ```
 
----
 
 ## Getting DATABASE_URL from Railway
 
@@ -107,7 +104,6 @@ When deploying to Railway, configure the `DATABASE_URL` environment variable sep
 
 [PostgreSQL + Drizzle docs](https://orm.drizzle.team/docs/tutorials/node-railway-pg)
 
----
 
 ## Zod Guide
 
@@ -126,7 +122,6 @@ Zod workflow is simple:
 - `parse()` throws a `ZodError`
 - `safeParse()` returns `{ success: false, error: ZodError }`
 
----
 
 ## Drizzle Setup Guide
 
@@ -174,7 +169,6 @@ export default defineConfig({
 })
 ```
 
----
 
 ## Drizzle ORM Guide *(coming soon)*
 
@@ -184,7 +178,6 @@ export default defineConfig({
 - Update
 - Others
 
----
 
 ## Drizzle Kit Guide
 
@@ -202,7 +195,6 @@ Drizzle Kit is a helper that manages database schema migrations.
 - Use `push` for development
 - Use `studio` for debugging
 
----
 
 ## Express Guide
 
@@ -211,7 +203,6 @@ Express is a web framework built on the Node.js runtime. The latest alternative 
 - Middlewares guide *(coming soon)*
 - Route order guide *(coming soon)*
 
----
 
 ## Progress
 
