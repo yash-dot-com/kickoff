@@ -10,7 +10,7 @@
 
 ### progress so far... 
 - [ x] first commit : installed packages, setup folder structure, configured drizzle, configured npm scripts, configured typed environement variables, structured db folder. 
-- [  ] second commit : add zod validator middleware, error handling middleware, standard response and request helper, requst logger, add cookie-parser
+- [  ] second commit : add zod validator middleware, error handling middleware, standard response and request helper, requst logger, add cookie-parser, implement express-rate-limiter 
 - [  ] third commit : restructure the index.ts and app.ts files, setup example routes and try deploying this on railway.
 
 ### features
