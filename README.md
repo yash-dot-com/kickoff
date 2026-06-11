@@ -110,13 +110,12 @@ There are 2 types of database URLs that Railway provides:
 - **Private URL** — only accessible from services within the same Railway project via internal networking, uses `railway.internal` hostname
 
 - **Environment variable:**
-```
-DATABASE_URL=postgresql://postgres:password@region.railway.app:port/railway
-```
+  ```
+  DATABASE_URL=postgresql://postgres:password@region.railway.app:port/railway
+  ```
 
-When deploying to Railway, configure the `DATABASE_URL` environment variable separately in the Railway dashboard.
-
-[PostgreSQL + Drizzle docs](https://orm.drizzle.team/docs/tutorials/node-railway-pg)
+- When deploying to Railway, configure the `DATABASE_URL` environment variable separately in the Railway dashboard.
+- [PostgreSQL + Drizzle docs](https://orm.drizzle.team/docs/tutorials/node-railway-pg)
 
 <br>
 
