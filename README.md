@@ -18,6 +18,13 @@ A minimal opinionated production-ready TS + Express + PostgreSQL + Drizzle start
 
 <br>
 
+### Future Scopes 
+- enhanced backend security
+- betterAuth integration for authentication workflows
+- end to end testing  
+
+<br>
+
 ### Features
 
 **Preconfigured:**
