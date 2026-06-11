@@ -71,6 +71,14 @@ modules/
     links.query.ts      <- raw drizzle queries, repository fns 
 ```
 
+### getting DATABASE_URL from railway
+- there are 2 types of database urls that railway provides
+- public url : can be used to access DB from anywhere, uses TCP proxy and looks like : postgresql://postgres:password@region.railway.app:port/railway
+- private url : only accessible from services within the same railway project via internal networking, uses railway.internal hostname. 
+- env variable: DATABASE_URL= postgresql://postgres:password@region.railway.app:port/railway
+- when deploying to railway, you need to configure the DATABASE_URL environment variable separately in the railway dashboard.
+- [link to postgresql + drizzle docs](https://orm.drizzle.team/docs/tutorials/node-railway-pg)
+
 ### zod guide 
 - zod workflow is simple.
   - define schema 

@@ -21,8 +21,13 @@ app.use(rateLimiter(50))
 // mount routers here 
 // app.use("/", userRouter) 
 
+// using validator 
+// all the routes that can produce error needs to have next() function as well to be able to call the errorHandler middleware
+// app.get("/users", validate(userSchema), async(req,res,next)=>{
+// })
+
 // health route 
-app.get("/health", (req: Request, res: Response, next: NextFunction) => {
+app.get("/health", (req: Request, res: Response) => {
   successResponse(res, "OK", {})
 })
 
