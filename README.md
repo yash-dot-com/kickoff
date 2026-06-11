@@ -1,11 +1,12 @@
-# kickoff
+### kickoff
+<br>
 
 A minimal opinionated production-ready TS + Express + PostgreSQL + Drizzle starter template for building backends quickly.
 
 <br>
 <img width="1154" height="516" alt="image" src="https://github.com/user-attachments/assets/166e3d55-c3c4-422d-b028-49445e14d310" />
-
 <br>
+
 **Built with:**
 - Express 5
 - Zod
@@ -13,8 +14,9 @@ A minimal opinionated production-ready TS + Express + PostgreSQL + Drizzle start
 - Drizzle ORM
 - TypeScript
 
+<br>
 
-## Features
+### Features
 
 **Preconfigured:**
 - `/health` check route
@@ -27,6 +29,8 @@ A minimal opinionated production-ready TS + Express + PostgreSQL + Drizzle start
 - Generic Zod validator middleware
 - Standardized `successResponse` and `errorResponse` helper functions
 
+<br>
+
 **Module based file organization:**
 - Everything related to a feature lives inside a single folder
 - `post.schema.ts`
@@ -35,8 +39,9 @@ A minimal opinionated production-ready TS + Express + PostgreSQL + Drizzle start
 - `post.service.ts`
 - `post.query.ts`
 
+<br>
 
-## File Organization
+### File Organization
 
 Simple file organization with no overhead of understanding complex 20-file templates with scattered code.
 
@@ -49,8 +54,9 @@ src/
   middlewares/   ← all middlewares live here
 ```
 
+<br>
 
-## Deployment
+### Deployment
 
 - **Database:** Railway (PostgreSQL)
 - **Backend:** Railway
@@ -63,14 +69,17 @@ npm run build  # tsc
 npm run start  # node --env-file .env dist/index.js
 ```
 
-> **NOTE:** Remove `--env-file .env` from the `start` script before deploying. It is only for local development. Railway handles environment variables through its dashboard.
+- **NOTE:** Remove `--env-file .env` from the `start` script before deploying. It is only for local development. Railway handles environment variables through its dashboard.
 
+<br>
 
-## Module Based File Organization
+### Module Based File Organization
 
 Each module is self-contained and handles only one specified responsibility.
 
 **Flow is always:** `route → controller → service → DB`
+
+<br>
 
 Easy and predictable.
 
@@ -84,8 +93,11 @@ modules/
     links.query.ts       ← raw drizzle queries, repository functions
 ```
 
+<br>
 
-## Getting DATABASE_URL from Railway
+### Getting DATABASE_URL from Railway
+
+<br>
 
 There are 2 types of database URLs that Railway provides:
 
@@ -95,7 +107,7 @@ There are 2 types of database URLs that Railway provides:
   ```
 - **Private URL** — only accessible from services within the same Railway project via internal networking, uses `railway.internal` hostname
 
-**Environment variable:**
+- **Environment variable:**
 ```
 DATABASE_URL=postgresql://postgres:password@region.railway.app:port/railway
 ```
@@ -104,8 +116,9 @@ When deploying to Railway, configure the `DATABASE_URL` environment variable sep
 
 [PostgreSQL + Drizzle docs](https://orm.drizzle.team/docs/tutorials/node-railway-pg)
 
+<br>
 
-## Zod Guide
+### Zod Guide
 
 Zod workflow is simple:
 
@@ -113,6 +126,8 @@ Zod workflow is simple:
 2. Create types from schema
 3. Create object with type
 4. Call `schemaName.parse(object)` or `schemaName.safeParse(object)`
+
+<br>
 
 **On success:**
 - `parse()` returns the same object passed into it
@@ -122,8 +137,10 @@ Zod workflow is simple:
 - `parse()` throws a `ZodError`
 - `safeParse()` returns `{ success: false, error: ZodError }`
 
+<br>
 
-## Drizzle Setup Guide
+### Drizzle Setup Guide
+<br>
 
 **npm scripts:**
 ```bash
@@ -134,7 +151,7 @@ npm run drizzle:push      # npx drizzle-kit push
 
 **`drizzle.config.ts`** — all Drizzle related config goes here.
 
-> **NOTE:** `drizzle.config.ts` must exist in the root of the project.
+- **NOTE:** `drizzle.config.ts` must exist in the root of the project.
 
 This file tells Drizzle:
 - Where your schema files are defined
@@ -151,6 +168,8 @@ src/
       posts.ts
       users.ts
 ```
+
+<br>
 
 **Example `drizzle.config.ts`:**
 ```js
@@ -169,8 +188,9 @@ export default defineConfig({
 })
 ```
 
+<br>
 
-## Drizzle ORM Guide *(coming soon)*
+### Drizzle ORM Guide *(coming soon)*
 
 - Writing queries with Drizzle ORM
 - Insert
@@ -178,6 +198,7 @@ export default defineConfig({
 - Update
 - Others
 
+<br>
 
 ## Drizzle Kit Guide
 
@@ -190,22 +211,26 @@ Drizzle Kit is a helper that manages database schema migrations.
 | `npx drizzle-kit push` | Skips migration files, pushes schema directly to DB |
 | `npx drizzle-kit studio` | Opens a UI to browse your DB in the browser |
 
+<br>
+
 **Tips:**
 - Use `generate` + `migrate` for production
 - Use `push` for development
 - Use `studio` for debugging
 
+<br>
 
-## Express Guide
+### Express Guide
 
 Express is a web framework built on the Node.js runtime. The latest alternative is Hono.js, which is faster and properly typed with TypeScript. Learning Express makes you capable enough to use any JS web framework — they're all the same concepts.
 
-- Middlewares guide *(coming soon)*
-- Route order guide *(coming soon)*
+- Middlewares guide (still writing, cause I don't use AI)
+- Route order guide 
 
+<br>
 
-## Progress
+### Progress
 
 - [x] First commit — installed packages, setup folder structure, configured Drizzle, configured npm scripts, configured typed environment variables, structured db folder
-- [ ] Second commit — add Zod validator middleware, error handling middleware, standard response and request helper, request logger, add cookie-parser, implement express-rate-limiter
-- [ ] Third commit — restructure `index.ts` and `app.ts`, setup example routes, deploy to Railway
+- [x] Second commit — add Zod validator middleware, error handling middleware, standard response and request helper, request logger, add cookie-parser, implement express-rate-limiter
+- [x] Third commit — restructure `index.ts` and `app.ts`, setup example routes, deploy to Railway
